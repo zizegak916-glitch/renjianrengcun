@@ -1,0 +1,51 @@
+name: Assemble v23 outline
+
+on:
+  push:
+    branches:
+      - codex/v23-outline
+    paths:
+      - artifacts/v23.0/**
+      - .github/workflows/assemble-v23.yml
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/v23-outline
+
+      - name: Rebuild Markdown
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd artifacts/v23.0
+          cat 人间仍存_v23.0.md.gz.b64.part01 \
+              人间仍存_v23.0.md.gz.b64.part02 \
+              人间仍存_v23.0.md.gz.b64.part03a \
+              人间仍存_v23.0.md.gz.b64.part03b \
+              人间仍存_v23.0.md.gz.b64.part03c \
+              人间仍存_v23.0.md.gz.b64.part04 \
+              > 人间仍存_v23.0.md.gz.b64
+          base64 --decode 人间仍存_v23.0.md.gz.b64 > 人间仍存_v23.0.md.gz
+          gzip --decompress --force 人间仍存_v23.0.md.gz
+          mv 人间仍存_v23.0.md 人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md
+          echo "00f0c33b1959b8734e3920d2b0b003d6017223c91f99a8bdf9776de36d9f84a6  人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md" | sha256sum --check
+          rm -f 人间仍存_v23.0.md.gz.b64
+
+      - name: Commit rebuilt Markdown
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artifacts/v23.0/人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Add readable v23.0 outline"
+          git push origin HEAD:codex/v23-outline
