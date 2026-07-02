@@ -1,0 +1,44 @@
+name: Assemble v23 outline
+
+on:
+  push:
+    branches:
+      - codex/v23-outline
+    paths:
+      - artifacts/v23.0/**
+      - .github/workflows/assemble-v23.yml
+
+permissions:
+  contents: read
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/v23-outline
+
+      - name: Validate readable Markdown
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          readable = Path("artifacts/v23.0/readable")
+          files = sorted(readable.glob("*.md"))
+          if not files:
+              raise SystemExit("no readable Markdown files found under artifacts/v23.0/readable")
+
+          total = 0
+          for path in files:
+              text = path.read_text(encoding="utf-8")
+              if not text.strip():
+                  raise SystemExit(f"{path} is empty")
+              total += len(text.encode("utf-8"))
+
+          print(f"readable_files={len(files)}")
+          print(f"readable_bytes={total}")
+          print("v23 readable outline validation passed")
+          PY
