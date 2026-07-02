@@ -1,1 +1,0 @@
-Trigger full v23.0 single-file assembly on main. Retry 2026-07-02.
