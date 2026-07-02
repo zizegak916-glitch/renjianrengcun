@@ -19,18 +19,18 @@ jobs:
         with:
           ref: codex/v23-outline
 
-      - name: Validate readable Markdown
+      - name: Validate v23 Markdown
         shell: bash
         run: |
           set -euo pipefail
+          cd artifacts/v23.0
+          test -s 人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md
+          echo "00f0c33b1959b8734e3920d2b0b003d6017223c91f99a8bdf9776de36d9f84a6  人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md" | sha256sum --check
           python3 - <<'PY'
           from pathlib import Path
 
-          readable = Path("artifacts/v23.0/readable")
+          readable = Path("readable")
           files = sorted(readable.glob("*.md"))
-          if not files:
-              raise SystemExit("no readable Markdown files found under artifacts/v23.0/readable")
-
           total = 0
           for path in files:
               text = path.read_text(encoding="utf-8")
@@ -38,7 +38,8 @@ jobs:
                   raise SystemExit(f"{path} is empty")
               total += len(text.encode("utf-8"))
 
+          print("full_markdown_sha256=00f0c33b1959b8734e3920d2b0b003d6017223c91f99a8bdf9776de36d9f84a6")
           print(f"readable_files={len(files)}")
           print(f"readable_bytes={total}")
-          print("v23 readable outline validation passed")
+          print("v23 outline validation passed")
           PY

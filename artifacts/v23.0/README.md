@@ -5,31 +5,14 @@
 - 原始文件：`人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md`
 - 原始大小：153,396 bytes
 - SHA-256：`00f0c33b1959b8734e3920d2b0b003d6017223c91f99a8bdf9776de36d9f84a6`
-- 编码方式：UTF-8 Markdown → gzip → base64 → 分片
+- 当前交付方式：直接提交 UTF-8 Markdown 原文。
 
-由于当前 GitHub 连接器单次文本写入限制，压缩后的 base64 被拆成以下连续分片：
+早期尝试曾使用 `gzip → base64 → 分片`，但分片制品不再作为可信交付物；请以本目录下的完整 Markdown 文件和上面的 SHA-256 为准。
 
-1. `人间仍存_v23.0.md.gz.b64.part01`
-2. `人间仍存_v23.0.md.gz.b64.part02`
-3. `人间仍存_v23.0.md.gz.b64.part03a`
-4. `人间仍存_v23.0.md.gz.b64.part03b`
-5. `人间仍存_v23.0.md.gz.b64.part03c`
-6. `人间仍存_v23.0.md.gz.b64.part04`
-
-## Linux / macOS 还原
+## Linux / macOS 校验
 
 ```bash
 cd artifacts/v23.0
-cat 人间仍存_v23.0.md.gz.b64.part01 \
-    人间仍存_v23.0.md.gz.b64.part02 \
-    人间仍存_v23.0.md.gz.b64.part03a \
-    人间仍存_v23.0.md.gz.b64.part03b \
-    人间仍存_v23.0.md.gz.b64.part03c \
-    人间仍存_v23.0.md.gz.b64.part04 \
-    > 人间仍存_v23.0.md.gz.b64
-base64 --decode 人间仍存_v23.0.md.gz.b64 > 人间仍存_v23.0.md.gz
-gzip --decompress 人间仍存_v23.0.md.gz
-mv 人间仍存_v23.0.md 人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md
 sha256sum 人间仍存_第一卷全量重写大纲_v23.0_251章番茄男频章名重制版.md
 ```
 
