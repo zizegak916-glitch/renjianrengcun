@@ -4,6 +4,14 @@
 
 ![redraw-selected-08-cross-volume](./redraw-selected-08-cross-volume.png)
 
+## Bright Cover With Title
+
+![xurenjian-cover-bright-title-v3](./xurenjian-cover-bright-title-v3.png)
+
+## Bright Artwork Without Title
+
+![redraw-selected-08-cross-volume-bright](./redraw-selected-08-cross-volume-bright.png)
+
 ## Contact Sheet
 
 ![contact-sheet](./contact-sheet.jpg)
