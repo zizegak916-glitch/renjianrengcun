@@ -4,7 +4,11 @@
 
 ![redraw-selected-08-cross-volume](./redraw-selected-08-cross-volume.png)
 
-## Bright Cover With Title
+## Painted Title Cover
+
+![xurenjian-cover-painted-title-v1](./xurenjian-cover-painted-title-v1.png)
+
+## Bright Cover With Font Title
 
 ![xurenjian-cover-bright-title-v3](./xurenjian-cover-bright-title-v3.png)
 
