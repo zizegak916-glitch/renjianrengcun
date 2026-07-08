@@ -6,6 +6,10 @@
 
 ## Painted Title Cover
 
+![xurenjian-cover-painted-title-v4-starry-balanced](./xurenjian-cover-painted-title-v4-starry-balanced.png)
+
+## Painted Title Cover - Brighter
+
 ![xurenjian-cover-painted-title-v1](./xurenjian-cover-painted-title-v1.png)
 
 ## Bright Cover With Font Title
