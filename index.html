@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="《人间仍存》世界观、人物、章节与设定档案。" />
+    <title>人间仍存 · 档案库</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到内容</a>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="人间仍存首页">
+        <span class="brand-mark">续</span>
+        <span>人间仍存 <i>/</i> ARCHIVE</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">目录</button>
+      <nav id="primary-nav" aria-label="主导航">
+        <a href="#world">世界</a>
+        <a href="#characters">人物</a>
+        <a href="#chapters">章节</a>
+        <a href="#documents">文档</a>
+      </nav>
+      <a class="header-link" href="https://github.com/zizegak916-glitch/renjianrengcun" target="_blank" rel="noreferrer">GITHUB ↗</a>
+    </header>
+
+    <main id="content">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">THE FOOL · FICTION ARCHIVE · 01</p>
+          <h1 id="hero-title">人间仍存</h1>
+          <p class="hero-subtitle">把被压掉的人、动作和死亡，重新带回历史。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#documents">进入档案</a>
+            <a class="button button-quiet" href="#chapters">查看第一卷 <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="黑白水墨质感的抽象视觉">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="ink ink-one"></div><div class="ink ink-two"></div>
+          <p>HUMANS<br />REMAIN.</p>
+        </div>
+        <div class="hero-meta">
+          <span>世界观工程</span><span>第一卷 / 死销未闭</span><span>持续整理中</span>
+        </div>
+      </section>
+
+      <section class="manifesto section-rule" id="world" aria-labelledby="world-title">
+        <p class="section-index">01 / 世界</p>
+        <div>
+          <h2 id="world-title">历史从不只属于刻痕。</h2>
+          <p>《人间仍存》以神州为起点：盲目织史者读取已经成立的结果，人类用“账”“录”“补”去触碰那条边界。可一条真正发生过的人间链，总会留下泥线、声音、工牌与没有被擦净的名字。</p>
+        </div>
+      </section>
+
+      <section class="principles" aria-label="核心设定">
+        <article><span>01</span><h3>人间链</h3><p>具体的人、动作、饭量、脚印、泥线和声音，让现实无法被概括成干净的结果。</p></article>
+        <article><span>02</span><h3>补痕</h3><p>只补仍留在现实里的残缺：旧伤、纸边、水迹、未闭合的死局。</p></article>
+        <article><span>03</span><h3>候</h3><p>新事件尚未落定时，被更高层记录盯住后出现的危险结果。</p></article>
+      </section>
+
+      <section class="section-rule character-section" id="characters" aria-labelledby="characters-title">
+        <div class="section-heading"><p class="section-index">02 / 人物</p><h2 id="characters-title">先有选择，才有能力。</h2></div>
+        <div class="character-grid" id="character-grid"></div>
+      </section>
+
+      <section class="section-rule chapters" id="chapters" aria-labelledby="chapters-title">
+        <div class="section-heading chapter-heading"><div><p class="section-index">03 / 第一卷</p><h2 id="chapters-title">死销未闭</h2></div><p>陈亦醒来，使沈怀之死无法被干净解释。</p></div>
+        <div class="chapter-controls" role="group" aria-label="章节状态筛选">
+          <button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="written">已写</button><button class="filter" data-filter="outline">大纲</button>
+        </div>
+        <ol class="chapter-list" id="chapter-list"></ol>
+      </section>
+
+      <section class="section-rule documents" id="documents" aria-labelledby="documents-title">
+        <div class="section-heading docs-heading"><div><p class="section-index">04 / 档案</p><h2 id="documents-title">从一页纸开始。</h2></div><label class="search"><span class="sr-only">搜索档案</span><input id="document-search" type="search" placeholder="搜索设定、人物、章节…" autocomplete="off" /><kbd>⌘ K</kbd></label></div>
+        <p id="search-status" class="search-status" aria-live="polite">已收录 12 份核心文档</p>
+        <div class="document-grid" id="document-grid"></div>
+      </section>
+
+      <section class="cta">
+        <p class="eyebrow">THE FOOL · THE-Fool.xyz</p>
+        <h2>档案会继续生长。</h2>
+        <a class="button button-primary" href="https://github.com/zizegak916-glitch/renjianrengcun" target="_blank" rel="noreferrer">前往源码库 ↗</a>
+      </section>
+    </main>
+    <footer><span>© <span id="year"></span> THE FOOL</span><span>人不是条目。死不是边角。</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
