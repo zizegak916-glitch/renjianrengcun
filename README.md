@@ -15,7 +15,7 @@ npx wrangler pages dev .
 - 响应式阅读首页与移动目录
 - 人物卡片
 - 第一卷章节状态筛选
-- 档案全文搜索，直达 GitHub 源文件
+- 档案索引搜索，直达 GitHub 源文件
 - `Ctrl/⌘ + K` 聚焦档案搜索
 - `/api/health` 健康检查（Cloudflare Pages Functions）
 
